@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS EE.09</title>
+  </head>
+  <body>
+    <h1>Oblicz koszt paliwa</h1>
+
+    <form id="formularz" name="ble" onsubmit="return funkcja1()">
+      Rodzaj paliwa: <input type="number" name="rp" value=""><br />
+      Ile litrów: <input type="number" name="il" value=""><br />
+      <input type="submit" name="submit" value="Oblicz">
+    </form>
+
+    <p id="wynik"></p>
+
+    <script type="text/javascript">
+      function funkcja1(){
+        let paliwo = document.getElementById('formularz').rp.value;
+        let litry  = document.getElementById('formularz').il.value;
+        let kosztPaliwa = 0;
+
+          if (paliwo==1) { kosztPaliwa = 4; }
+          else if (paliwo==2) {kosztPaliwa =3.5;}
+          else {kosztPaliwa = 0;}
+
+        document.getElementById("wynik").innerHTML="Koszt paliwa: " + kosztPaliwa*litry + "zł";
+        return false;
+      }
+    </script>
+  </body>
+</html>
